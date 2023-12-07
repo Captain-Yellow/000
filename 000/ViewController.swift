@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let member = Members[indexPath.row]
         
         cell.textLabel?.text = member.a.capitalized
+        cell.accessoryType = member.i == true ? .checkmark : .none
         
         return cell
     }
@@ -68,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                     // Successfully decoded ConfigCardPaymentDTO
                                     print(configCardPaymentDTO.configItems)
                                     self.Members.append(contentsOf: configCardPaymentDTO.configItems)
-                                    print("\n\n \(configCardPaymentDTO.configItems[0].e) \n\n")
+                                    
                                 }
                                 // Attempt to decode BankListDTO
                                 else if let bankListDTO = try? JSONDecoder().decode(BankListDTO.self, from: jsonData) {

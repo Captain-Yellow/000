@@ -49,7 +49,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mum-xA-nGQ">
-                                <rect key="frame" x="135" y="192.33333333333334" width="122" height="34.666666666666657"/>
+                                <rect key="frame" x="135.66666666666666" y="192.33333333333334" width="121.99999999999997" height="34.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="b6p-m3-LG5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,9 +61,8 @@
                         <viewLayoutGuide key="safeArea" id="6TR-0Q-hk6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6TR-0Q-hk6" firstAttribute="trailing" secondItem="mum-xA-nGQ" secondAttribute="trailing" constant="136" id="E5l-JT-eZY"/>
-                            <constraint firstItem="6TR-0Q-hk6" firstAttribute="bottom" secondItem="mum-xA-nGQ" secondAttribute="bottom" constant="591" id="aKl-li-GPl"/>
-                            <constraint firstItem="mum-xA-nGQ" firstAttribute="leading" secondItem="6TR-0Q-hk6" secondAttribute="leading" constant="135" id="hkK-kQ-ad3"/>
+                            <constraint firstItem="mum-xA-nGQ" firstAttribute="centerX" secondItem="sxi-S8-SPG" secondAttribute="centerX" id="6C5-OU-vX1"/>
+                            <constraint firstItem="mum-xA-nGQ" firstAttribute="top" secondItem="6TR-0Q-hk6" secondAttribute="top" constant="89.333333333333371" id="DRa-kX-r2x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xBd-np-fiy"/>
