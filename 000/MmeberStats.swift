@@ -1,25 +1,50 @@
 import Foundation
 import UIKit
+
+//struct ConfigCardPaymentDTO: Codable {
+//    var configID: Int
+//    var configItems: [ConfigItem]
+//    var bankList: String?
+//
+//
+//}
+//enum CodingKeys: String, CodingKey {
+//    case configID
+//    case configItems, bankList
+//}
+//
+//struct ConfigItem: Codable {
+//    var a : String
+//    var b, c, d: String?
+//    var e, f: String?
+//    var g: Int
+//    var h: String?
+//    var i: Bool
+//}
+
+///
 struct ConfigCardPaymentDTO: Codable {
-    var configID: Int
-    var configItems: [ConfigItem]
-    var bankList: String?
-    
- 
-}
-enum CodingKeys: String, CodingKey {
-    case configID
-    case configItems, bankList
+    let configId: Int
+    let configItems: [ConfigItem]
 }
 
 struct ConfigItem: Codable {
-    var a : String
-    var b, c, d: String?
-    var e, f: String?
-    var g: Int
-    var h: String?
-    var i: Bool
+    let a: String
+    let b: String
+    let c: String
+    let d: String
+    let e: String
+    let f: String
+    let g: Int
+    let h: String
+    let i: Bool
 }
+
+struct BankListDTO: Codable {
+    let bankList: [String]
+}
+
+///
 
 
 extension Bundle {

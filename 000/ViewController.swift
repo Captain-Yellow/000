@@ -50,20 +50,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         URLSession.shared.dataTask(with: url!) { data,
             response , error in
             
-            if data != nil {
+            if data != nil, error == nil {
+                guard let data = data else { return }
+                print(String(data: data, encoding: .utf8))
+                print("/n/n")
                 do {
-                    let res = try JSONDecoder().decode([ConfigItem].self, from: data!)
-                       
+                    let res = try JSONDecoder().decode([String].self, from: data)
+                    print("response \(res)")
+                    print("response \(res.count)")
+                    
+                    for jsonString in res {
+                            // Convert each string back into Data
+                            if let jsonData = jsonString.data(using: .utf8) {
+                                // Attempt to decode ConfigCardPaymentDTO
+                                if let configCardPaymentDTO = try? JSONDecoder().decode(ConfigCardPaymentDTO.self, from: jsonData) {
+                                    // Successfully decoded ConfigCardPaymentDTO
+                                    print(configCardPaymentDTO.configItems)
+                                    print(configCardPaymentDTO.configItems[0].a)
+                                }
+                                // Attempt to decode BankListDTO
+                                else if let bankListDTO = try? JSONDecoder().decode(BankListDTO.self, from: jsonData) {
+                                    // Successfully decoded BankListDTO
+                                    print(bankListDTO)
+                                }
+                            }
+                        }
+                    
                     DispatchQueue.main.async {
                         completed()
                     }
-                    
-                    
-                   
                 }
                 catch {
                     print(String(describing: error))
+                    print("\n\nError\n\n")
+                    print(error.localizedDescription)
                 }
+            }
+            else {
+                print("error in if")
+                print(error)
+                print("\n\n")
+                print(data)
             }
         }.resume()
     }
