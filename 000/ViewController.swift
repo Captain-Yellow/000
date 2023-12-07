@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if data != nil, error == nil {
                 guard let data = data else { return }
                 print(String(data: data, encoding: .utf8))
-                print("/n/n")
+                print("\n\n")
                 do {
                     let res = try JSONDecoder().decode([String].self, from: data)
                     print("response \(res)")
@@ -61,12 +61,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     for jsonString in res {
                             // Convert each string back into Data
+                        print("\n\n \(jsonString.count)\n\n")
                             if let jsonData = jsonString.data(using: .utf8) {
                                 // Attempt to decode ConfigCardPaymentDTO
                                 if let configCardPaymentDTO = try? JSONDecoder().decode(ConfigCardPaymentDTO.self, from: jsonData) {
                                     // Successfully decoded ConfigCardPaymentDTO
                                     print(configCardPaymentDTO.configItems)
-                                    print(configCardPaymentDTO.configItems[0].a)
+                                    self.Members.append(contentsOf: configCardPaymentDTO.configItems)
+                                    print("\n\n \(configCardPaymentDTO.configItems[0].e) \n\n")
                                 }
                                 // Attempt to decode BankListDTO
                                 else if let bankListDTO = try? JSONDecoder().decode(BankListDTO.self, from: jsonData) {
@@ -75,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                 }
                             }
                         }
-                    
+//                    self.Members =
                     DispatchQueue.main.async {
                         completed()
                     }
