@@ -15,9 +15,11 @@ class CustomTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
-        button.tintColor = .red
-        button.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        let myRandom = ["figure.dance", "figure.strengthtraining.functional", "figure.mixed.cardio", "figure.yoga", "figure.cooldown", "figure.core.training", "figure.wave", "figure.climbing", "figure.barre", "figure.cross.training", "figure.gymnastics"]
+        let myColor: [UIColor] = [.systemYellow, .red, .purple, .green, .blue, .systemPink, .orange, .systemTeal, .cyan]
+        button.setImage(UIImage(systemName: myRandom.randomElement()!), for: .normal)
+        button.tintColor = myColor.randomElement()
+        button.addTarget(self, action: #selector(deleteButtonTapped(_:)), for: .touchUpInside)
         contentView.addSubview(button)
     }
     
@@ -47,8 +49,8 @@ class CustomTableViewCell: UITableViewCell {
 //        super.draw(rect)
 //    }
     
-    @objc func deleteButtonTapped() {
-        print("delete")
+    @objc func deleteButtonTapped(_ sender: UIButton) {
+        print(sender.tag)
     }
 
 }

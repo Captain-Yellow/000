@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
-protocol EditViewControllerDelegate: AnyObject {
+protocol EditViewControllerDelegate: class {
     /// Dont Forget: Create a optional weak delegate property - Pass self as argument of protocol methods
-    func didEdited(_: EditViewController)
+    func didEdited(_: EditViewController, editedText: String, index: Int)
 }
 
 class EditViewController: UIViewController {
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var memebr: String?
+    var index: Int?
     var delegate: EditViewControllerDelegate?
     
     private let textFild: UITextField = {
@@ -35,8 +37,9 @@ class EditViewController: UIViewController {
         return custom
     }()
     
-    init(memebr: String? = nil) {
+    init(memebr: String? = nil, index: Int? = nil) {
         self.memebr = memebr
+        self.index = index
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -65,10 +68,12 @@ class EditViewController: UIViewController {
     }
     
     @objc func editButtonTapped() {
-        print("Edit")
-//        let newCategory = Category(context: self.context!)
-//        newCategory.name = textField.text!
-//        self.categoryArray.append(newCategory)
-//        self.saveData()
+        if !textFild.isReallyEmpty {
+            print(textFild.text)
+            if delegate == nil {
+                print("nil")
+            }
+            delegate?.didEdited(self, editedText: textFild.text!, index: index!)
+        }
     }
 }
