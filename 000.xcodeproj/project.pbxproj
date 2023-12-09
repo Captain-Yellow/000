@@ -15,6 +15,11 @@
 		C3EB65AE2B20BC71009EF411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EB65AC2B20BC71009EF411 /* LaunchScreen.storyboard */; };
 		C3EB65B62B20BDC5009EF411 /* MmeberStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB65B52B20BDC5009EF411 /* MmeberStats.swift */; };
 		C3EB65B82B20C10E009EF411 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB65B72B20C10E009EF411 /* MemberViewController.swift */; };
+		FD7F289B2B24820800154A0E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F289A2B24820800154A0E /* AddViewController.swift */; };
+		FDD7B1062B247A1E00766654 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7B1052B247A1E00766654 /* CustomTableViewCell.swift */; };
+		FDE124852B2491810007DA27 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE124842B2491810007DA27 /* CoreData.framework */; };
+		FDE124882B2491B00007DA27 /* MembersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDE124862B2491B00007DA27 /* MembersModel.xcdatamodeld */; };
+		FDE1248A2B249B380007DA27 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE124892B249B380007DA27 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		C3EB65AF2B20BC71009EF411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3EB65B52B20BDC5009EF411 /* MmeberStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MmeberStats.swift; sourceTree = "<group>"; };
 		C3EB65B72B20C10E009EF411 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		FD7F289A2B24820800154A0E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		FDD7B1052B247A1E00766654 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		FDE124842B2491810007DA27 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FDE124872B2491B00007DA27 /* MembersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MembersModel.xcdatamodel; sourceTree = "<group>"; };
+		FDE124892B249B380007DA27 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE124852B2491810007DA27 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +57,7 @@
 			children = (
 				C3EB65A02B20BC6F009EF411 /* 000 */,
 				C3EB659F2B20BC6F009EF411 /* Products */,
+				FDE124832B2491800007DA27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,12 +77,24 @@
 				C3EB65A52B20BC6F009EF411 /* ViewController.swift */,
 				C3EB65B52B20BDC5009EF411 /* MmeberStats.swift */,
 				C3EB65B72B20C10E009EF411 /* MemberViewController.swift */,
+				FDE124892B249B380007DA27 /* EditViewController.swift */,
+				FD7F289A2B24820800154A0E /* AddViewController.swift */,
+				FDD7B1052B247A1E00766654 /* CustomTableViewCell.swift */,
 				C3EB65A72B20BC6F009EF411 /* Main.storyboard */,
 				C3EB65AA2B20BC71009EF411 /* Assets.xcassets */,
 				C3EB65AC2B20BC71009EF411 /* LaunchScreen.storyboard */,
 				C3EB65AF2B20BC71009EF411 /* Info.plist */,
+				FDE124862B2491B00007DA27 /* MembersModel.xcdatamodeld */,
 			);
 			path = 000;
+			sourceTree = "<group>";
+		};
+		FDE124832B2491800007DA27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDE124842B2491810007DA27 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,11 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD7B1062B247A1E00766654 /* CustomTableViewCell.swift in Sources */,
 				C3EB65A62B20BC6F009EF411 /* ViewController.swift in Sources */,
+				FD7F289B2B24820800154A0E /* AddViewController.swift in Sources */,
 				C3EB65A22B20BC6F009EF411 /* AppDelegate.swift in Sources */,
 				C3EB65A42B20BC6F009EF411 /* SceneDelegate.swift in Sources */,
+				FDE124882B2491B00007DA27 /* MembersModel.xcdatamodeld in Sources */,
 				C3EB65B82B20C10E009EF411 /* MemberViewController.swift in Sources */,
 				C3EB65B62B20BDC5009EF411 /* MmeberStats.swift in Sources */,
+				FDE1248A2B249B380007DA27 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FDE124862B2491B00007DA27 /* MembersModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDE124872B2491B00007DA27 /* MembersModel.xcdatamodel */,
+			);
+			currentVersion = FDE124872B2491B00007DA27 /* MembersModel.xcdatamodel */;
+			path = MembersModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3EB65962B20BC6F009EF411 /* Project object */;
 }
