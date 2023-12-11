@@ -13,6 +13,8 @@ class ViewController: UIViewController, AddViewControllerDelegate, EditViewContr
 //    var editMember: EditViewController!
     
     override func viewDidLoad() {
+        // location of core data file
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 //        editMember = EditViewController()
         addNewMember.delegate = self
 //        editMember.delegate = self
